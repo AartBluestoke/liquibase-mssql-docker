@@ -31,7 +31,7 @@ header() { printf '=%.0s' {1..79}; echo; echo $@; printf '=%.0s' {1..79}; echo; 
 
 header "Building $project $version"
 echo "jdbc_driver_version=$version" > .env
-docker build --tag "$project:build" --no-cache --pull --compress --build-arg jdbc_driver_version="$version" .
+docker build --tag "$project:build" --no-cache --pull --build-arg jdbc_driver_version="$version" .
 
 (( $publish )) || exit 0
 
