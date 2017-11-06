@@ -1,6 +1,6 @@
 # liquibase-mssql-docker
 
-[![](https://images.microbadger.com/badges/image/rubms/liquibase-mssql.svg)](https://microbadger.com/images/kilna/liquibase-postgres)
+[![](https://images.microbadger.com/badges/image/rubms/liquibase-mssql.svg)](https://microbadger.com/images/rubms/liquibase-mssql)
 [![](https://img.shields.io/docker/pulls/rubms/liquibase-mssql.svg?style=plastic)](https://hub.docker.com/r/rubms/liquibase-mssql/)
 [![](https://img.shields.io/docker/stars/rubms/liquibase-mssql.svg?style=plastic)](https://hub.docker.com/r/rubms/liquibase-mssql/)
 
