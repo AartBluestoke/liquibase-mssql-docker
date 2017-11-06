@@ -1,13 +1,13 @@
-# liquibase-postgres-docker
+# liquibase-mssql-docker
 
-[![](https://images.microbadger.com/badges/image/kilna/liquibase-postgres.svg)](https://microbadger.com/images/kilna/liquibase-postgres)
-[![](https://img.shields.io/docker/pulls/kilna/liquibase-postgres.svg?style=plastic)](https://hub.docker.com/r/kilna/liquibase-postgres/)
-[![](https://img.shields.io/docker/stars/kilna/liquibase-postgres.svg?style=plastic)](https://hub.docker.com/r/kilna/liquibase-postgres/)
-[![](https://img.shields.io/badge/docker_build-automated-blue.svg?style=plastic)](https://cloud.docker.com/swarm/kilna/repository/docker/kilna/liquibase-postgres/builds)
+[![](https://img.shields.io/docker/pulls/kilna/liquibase-postgres.svg?style=plastic)](https://hub.docker.com/r/rubms/liquibase-mssql/)
+[![](https://img.shields.io/docker/stars/kilna/liquibase-postgres.svg?style=plastic)](https://hub.docker.com/r/rubms/liquibase-mssql/)
 
-**A lightweight Docker for running [Liquibase](https://www.liquibase.org) with [PostgreSQL](http://www.postgres.org) databases**
+This project is based in [liquibase-postgres-docker](https://github.com/kilna/liquibase-postgres-docker) by [Kilna](https://github.com/kilna).
 
-DockerHub: [liquibase-postgres](https://hub.docker.com/r/kilna/liquibase-postgres/) - GitHub: [liquibase-postgres-docker](https://github.com/kilna/liquibase-postgres-docker)
+**A lightweight Docker for running [Liquibase](https://www.liquibase.org) with [SQL Server](https://www.microsoft.com/es-es/sql-server/sql-server-downloads) databases**
+
+DockerHub: [liquibase-mssql](https://hub.docker.com/r/rubms/liquibase-mssql/) - GitHub: [liquibase-mssql-docker](https://github.com/rubms/liquibase-mssql-docker)
 
 # Usage
 
@@ -16,7 +16,7 @@ DockerHub: [liquibase-postgres](https://hub.docker.com/r/kilna/liquibase-postgre
 You can use this image by creating your own `Dockerfile` which inherits using a FROM line:
 
 ```
-FROM kilna/liquibase-postgres-docker
+FROM rubms/liquibase-mssql-docker
 ENV LIQUIBASE_HOST=database.server
 ENV LIQUIBASE_DATABASE=dbname
 ENV LIQUIBASE_USERNAME=user
@@ -47,7 +47,7 @@ appropriate to your database like so... where _/local/path/to/changelog/_ is the
 
 ```
 $ docker run -e LIQUIBASE_HOST=database.server -e LIQUIBASE_USERNAME=user -e LIQUIBASE_PASSWORD=pass \
-    -e LIQUIBASE_DATABASE=dbname -v /local/path/to/changelog/:/workspace/ kilna/liquibase-postgres \
+    -e LIQUIBASE_DATABASE=dbname -v /local/path/to/changelog/:/workspace/ rubms/liquibase-mssql \
     liquibase updateTestingRollback
 ```
 

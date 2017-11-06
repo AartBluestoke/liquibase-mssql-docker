@@ -1,4 +1,4 @@
-project="liquibase-postgres"
-driver_pretty="PostgreSQL JDBC Driver"
-github_user="kilna"
+project="liquibase-mssql"
+driver_pretty="SQL Server JDBC Driver"
+github_user="rubms"
 

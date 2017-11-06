@@ -1,20 +1,16 @@
 FROM kilna/liquibase
-LABEL maintainer="Kilna kilna@kilna.com"
+LABEL maintainer="Ruben Martínez ruben.martinez1@gmail.com"
 
 ARG jdbc_driver_version
-ENV jdbc_driver_version=${jdbc_driver_version:-42.1.4}\
-    jdbc_driver_download_url=https://jdbc.postgresql.org/download\
-    LIQUIBASE_PORT=${LIQUIBASE_PORT:-5432}\
-    LIQUIBASE_CLASSPATH=${LIQUIBASE_CLASSPATH:-/opt/jdbc/postgres-jdbc.jar}\
-    LIQUIBASE_DRIVER=${LIQUIBASE_DRIVER:-org.postgresql.Driver}\
+ENV jdbc_driver_version=${jdbc_driver_version:-6.2.2}\
+    jdbc_driver_download_url=https://github.com/Microsoft/mssql-jdbc/releases/download/v${jdbc_driver_version}/mssql-jdbc-${jdbc_driver_version}.jre8.jar\
+    LIQUIBASE_PORT=${LIQUIBASE_PORT:-1433}\
+    LIQUIBASE_CLASSPATH=${LIQUIBASE_CLASSPATH:-/opt/jdbc/mssql-jdbc-${jdbc_driver_version}.jre8.jar}\
     LIQUIBASE_URL=${LIQUIBASE_URL:-'jdbc:postgresql://${HOST}:${PORT}/${DATABASE}'}
 
-COPY test/ /opt/test_liquibase_postgres/
 RUN set -x -e -o pipefail;\
     echo "JDBC DRIVER VERSION: $jdbc_driver_version";\
-    chmod +x /opt/test_liquibase_postgres/run_test.sh;\
     cd /opt/jdbc;\
-    jarfile=postgresql-${jdbc_driver_version}.jar;\
-    curl -SOLs ${jdbc_driver_download_url}/${jarfile};\
-    ln -s ${jarfile} postgres-jdbc.jar
+    curl -SOLs ${jdbc_driver_download_url};\
+    ln -s ${jarfile} mssql-jdbc.jar
 

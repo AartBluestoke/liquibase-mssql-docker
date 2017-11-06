@@ -33,13 +33,6 @@ header "Building $project $version"
 echo "jdbc_driver_version=$version" > .env
 docker build --tag "$project:build" --no-cache --pull --compress --build-arg jdbc_driver_version="$version" .
 
-header "Testing $project $version"
-docker-compose -f docker-compose.test.yml down $rmi &>/dev/null || true
-file=`mktemp`
-docker-compose -f docker-compose.test.yml up --exit-code-from sut --force-recreate --remove-orphans 2>&1 | tee "$file"
-[[ $(cat "$file") != *"sut_1 exited with code 0"* ]] && exit 1
-docker-compose -f docker-compose.test.yml down $rmi
-
 (( $publish )) || exit 0
 
 desc="From $driver_pretty v$version"
