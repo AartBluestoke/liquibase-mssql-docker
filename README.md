@@ -1,14 +1,16 @@
 # liquibase-mssql-docker
 
-[![](https://images.microbadger.com/badges/image/kilna/liquibase-postgres.svg)](https://microbadger.com/images/kilna/liquibase-postgres)
-[![](https://img.shields.io/docker/pulls/kilna/liquibase-postgres.svg?style=plastic)](https://hub.docker.com/r/rubms/liquibase-mssql/)
-[![](https://img.shields.io/docker/stars/kilna/liquibase-postgres.svg?style=plastic)](https://hub.docker.com/r/rubms/liquibase-mssql/)
+[![](https://images.microbadger.com/badges/image/rubms/liquibase-mssql.svg)](https://microbadger.com/images/kilna/liquibase-postgres)
+[![](https://img.shields.io/docker/pulls/rubms/liquibase-mssql.svg?style=plastic)](https://hub.docker.com/r/rubms/liquibase-mssql/)
+[![](https://img.shields.io/docker/stars/rubms/liquibase-mssql.svg?style=plastic)](https://hub.docker.com/r/rubms/liquibase-mssql/)
 
-This project is based in [liquibase-postgres-docker](https://github.com/kilna/liquibase-postgres-docker) by [Kilna](https://github.com/kilna).
 
-**A lightweight Docker for running [Liquibase](https://www.liquibase.org) with [the SQL Server JDBC driver](https://github.com/Microsoft/mssql-jdbc)**
+
+**A lightweight Docker for running [Liquibase](https://www.liquibase.org) with [the SQL Server JDBC driver](https://github.com/Microsoft/mssql-jdbc).**
 
 DockerHub: [liquibase-mssql](https://hub.docker.com/r/rubms/liquibase-mssql/) - GitHub: [liquibase-mssql-docker](https://github.com/rubms/liquibase-mssql-docker)
+
+This project is based in [liquibase-postgres-docker](https://github.com/kilna/liquibase-postgres-docker) by [Kilna](https://github.com/kilna).
 
 # Usage
 
