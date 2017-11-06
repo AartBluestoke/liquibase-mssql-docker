@@ -21,7 +21,7 @@ if (( $publish )); then
   git pull
   [[ "$dockerhub_user" == '' ]] && echo "Must be logged into dockerhub with docker login" >&2 && exit 180
   [[ "$github_token" == '' ]] && echo "Environment variable github_token must be set" >&2 && exit 181
-  [[ `git status` != *'working tree clean'* ]] && echo "Working directory must be clean" >&2 && exit 182
+  [[ `git status` != *'working directory clean'* ]] && echo "Working directory must be clean" >&2 && exit 182
 fi
 
 latest_version=$(tail -1 build/versions.txt)
