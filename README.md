@@ -19,7 +19,7 @@ This project is based in [liquibase-postgres-docker](https://github.com/kilna/li
 You can use this image by creating your own `Dockerfile` which inherits using a FROM line:
 
 ```
-FROM rubms/liquibase-mssql-docker
+FROM rubms/liquibase-mssql
 ENV LIQUIBASE_HOST=database.server
 ENV LIQUIBASE_DATABASE=dbname
 ENV LIQUIBASE_USERNAME=user
@@ -69,7 +69,7 @@ In order to create the liquibase.properties file, it uses the follow environment
 | LIQUIBASE_PASSWORD   | Password for username | liquibase |
 | LIQUIBASE_CHANGELOG  | Default changelog filename to use | changelog.xml |
 | LIQUIBASE_LOGLEVEL   | Log level as defined by Liquibase <br> _Valid values: debug, info, warning, severe, off_ | info |
-| LIQUIBASE_CLASSPATH  | JDBC driver filename | /opt/jdbc/mssql-jdbc.jar |
+| LIQUIBASE_CLASSPATH  | JDBC driver filename | /opt/jdbc/mssql-jdbc-${jdbc_driver_version}.jre8.jar |
 | LIQUIBASE_DRIVER     | JDBC object path | com.microsoft.sqlserver.jdbc.SQLServerDriver |
 | LIQUIBASE_URL        | JDBC URL for connection | jdbc:sqlserver://${HOST};database=${DATABASE} |
 | LIQUIBASE_DEBUG      | If set to 'yes', when _docker run_ is executed, will show the values of all LIQUIBASE_* environment variables and describes any substitutions performed on _liquibase.properties_ | _unset_ |
